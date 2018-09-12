@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bitcoin News Trader</title>
+    <!-- main styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/intlTelInput.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/popper.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/angular-cookies.js" type="text/javascript"></script>
+    <script src="js/jquery.mousewheel.js" type="text/javascript"></script>
+    <script src="js/jquery.mCustomScrollbar.js" type="text/javascript"></script>
+    <script src="js/scrollbars.min.js" type="text/javascript"></script>
+    <script src="js/moment-with-locales.min.js" type="text/javascript"></script>
+
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/TimelineController.js" type="text/javascript"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+   
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-12 col-sm">
+                        <a>
+                            <img src="fonts/logo.svg" class="header-logo" alt="">
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm"></div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="intro">
+                <div class="container">
+                    <h1>DON'T MISS THE BITCOIN’S CRAZE <br class="d-none d-xl-block">TRAIN OF SUCCESS</h1>
+                    <h2>Hop on board and you too can take control of your life</h2>
+                    <div class="register-box">
+                        <h5 class="text-center">See where being at the right place, at the right time, can get you...</h5>
+                        <div class="row no-gutters">
+                            <div class="col-xl col-12">
+                                <div class="video-container">
+                                    <img src="images/badge-video.png" id="video-badge">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <div class="up_sound">Enable sound</div>
+                                            <img src="images/volume.png" id="volume_up">
+                                        <div class="anticlicker"></div>
+                                        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/V8E09PiUzwQ?mute=1&autoplay=1&controls=1&disablekb=0&loop=1&modestbranding=1&rel=0&showinfo=0&playlist=V8E09PiUzwQ" frameborder="0" allowfullscreen=""></iframe> -->
+                                        <div id="ytplayer"></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="register-form" class="register-form col-xl col-12">
+                                <div class="prelouder"></div>
+                                <h3>START CHANGING YOUR LIFE TODAY</h3>
+                                <form id="myform" method="POST" onsubmit="gtag('event', 'submitLand', { 'event_category': 'submitForm'});">
+                                    <div class="register-form-tab active" id="account_information">
+                                        <ul class="register-form-tabs">
+                                            <li class="step-1"></li>
+                                            <li class="step-2"></li>
+                                            <li class="step-3"></li>
+                                        </ul>
+                                        <input type="text" class="edit first_name" name="first_name" placeholder="First Name">
+                                        <input type="text" class="edit last_name" name="last_name" placeholder="Last Name">
+                                        <input type="text" class="edit email" name="email" placeholder="Email">
+                                        <a href="" class="register-form-button next">
+                                            <span>Next</span>
+                                        </a>
+                                    </div>
+                                    <div class="register-form-tab" id="security">
+                                        <ul class="register-form-tabs">
+                                            <li class="step-1 passed"></li>
+                                            <li class="step-2"></li>
+                                            <li class="step-3"></li>
+                                        </ul>
+                                        <input type="password" class="edit password" id="password" name="password" placeholder="Password">
+                                        <input type="password" class="edit" id="confirm_password" placeholder="Confirm Password">
+                                        <div class="error" id="enter_same">
+                                            Enter the same password
+                                        </div>
+                                        <a href="" class="register-form-button next">
+                                            <span>Next</span>
+                                        </a>
+                                    </div>
+                                    <div class="register-form-tab" id="personal_phone">
+                                        <ul class="register-form-tabs">
+                                            <li class="step-1 passed"></li>
+                                            <li class="step-2 passed"></li>
+                                            <li class="step-3"></li>
+                                        </ul>
+                                        <input type="text" name="phonecc" id="phone123" class=" form-control1  phonecc edit" placeholder="Code" required="" aria-required="true">
+                                        <input type="text" name="phone" class="edit" placeholder="Phone Number">
+                                        <div>
+                                            <input type="hidden" name="session_id" class="session_id" value="" autocomplete="off">
+                                            <input type="hidden" class="affiliate_id" name="affiliate_id" value="" autocomplete="off">
+                                            <button class="register-form-button next">
+                                                <span id="finishBtn">Submit</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-basement">
+                    <div class="container">
+                        <div class="row">
+                            <h3 class="text-center h3-sources margin-top-20">Bitcoin News Trader collects news from hundreds of sources:</h3>
+                        </div>
+                        <div class="row align-items-center">
+                            <ul class="intro-basement-logos list-inline">
+                                <li class="list-inline-item">
+                                    <img src="images/logo-1.png" class="img-responsive">
+                                </li>
+                                <li class="list-inline-item">
+                                    <img src="images/logo-2.png" class="img-responsive">
+                                </li>
+                                <li class="list-inline-item">
+                                    <img src="images/logo-3.png" class="img-responsive">
+                                </li>
+                                <li class="list-inline-item">
+                                    <img src="images/logo-4.png" class="img-responsive">
+                                </li>
+                                <li class="list-inline-item">
+                                    <img src="images/logo-5.png" class="img-responsive">
+                                </li>
+                                <li class="list-inline-item">
+                                    <img src="images/logo-6.png" class="img-responsive">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about">
+                <div class="container">
+                    <div class="about-text">
+                        <h2 class="title">JOIN US TODAY AND BECOME BITCOIN’S NEXT <br class="d-none d-xl-block">SUCCESS STORY! </h2>
+                        <p>
+                            The success formula in trading is getting high-quality news before everyone else and properly evaluating its influence on the market.
+                        </p>
+                        <p>
+                            Bitcoin News Trader Software scans hundreds crypto-related news sources 24/7, which our team then rank along with a predicted trend for the relevant cryptocurrency.
+                        </p>
+                        <p>
+                            This saves you the time to track all relevant information yourself, and other crucial aspects of trading. By using this tool you can trade like an expert ‘working’ only several minutes a day, allowing you to work from anywhere in the world.
+                        </p>
+                        <p>
+                            Such a powerful tool is likely to cause a disruption in cryptocurrency trading, and so it is crucial to get on board fast as we only have
+                            <br class="d-none d-xl-block"><strong>a limited amount of available software licenses.</strong>
+                        </p>
+                    </div>
+                    <div class="advantages-list">
+                        <div class="row">
+                            <div class="advantages-list-item col-12 col-xl">
+                                <div class="advantages-list-item-wrap">
+                                    <span class="icon-news"></span>
+                                    <h3>News Intelligence Hub</h3>
+                                    <p>
+                                        By combining the automation of news-collection and our dedicated team, Bitcoin News Trader’s performance is unmatched.
+                                    </p>
+                                    <p>
+                                        Grown out of decades of online trading expertise, Bitcoin News Trader is the disruption the industry has been waiting for.
+                                    </p>
+                                </div>
+                                <span class="shadow"></span>
+                            </div>
+                            <div class="advantages-list-item col-12 col-xl">
+                                <div class="advantages-list-item-wrap">
+                                    <span class="icon-magnifier"></span>
+                                    <h3>Dedicated Team</h3>
+                                    <p>
+                                        Our team is working 24/7 for you, processing each news report carefully to ensure the highest quality content is delivered.
+                                    </p>
+                                    <p>
+                                        With this information you are always one step ahead of the market, which is key for success as you build up your online fortune.
+                                    </p>
+                                </div>
+                                <span class="shadow"></span>
+                            </div>
+                            <div class="advantages-list-item col-12 col-xl">
+                                <div class="advantages-list-item-wrap">
+                                    <span class="icon-easy-use"></span>
+                                    <h3>Easy to Use</h3>
+                                    <p>
+                                        Our tool does all the hard work for you, making it not only easy to use, but an incredible time-saver.
+                                    </p>
+                                    <p>
+                                        Now you no longer need trading expertise, nor do you have to study cryptocurrency related news on a daily basis.
+                                    </p>
+                                </div>
+                                <span class="shadow"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="testimonials">
+                <div class="container">
+                    <h2 class="title" id="proof">
+                        <span class="icon"></span>
+                        DON’T TAKE OUR WORD FOR IT
+                    </h2>
+                    <div class="subtitle">
+                        Let's examine real time events, how they were spotted by Bitcoin News Trader software and team and how the market reacted accordingly
+                    </div>
+                    <div class="proofs-holder" ng-controller="TimelineController as tc">
+                        <div class="timeline-holder">
+                            <div ng-scrollbars="" ng-scrollbars-config="tc.scrollbarOptions" ng-scrollbars-update="tc.updateScrollbar">
+                                <div class="timeline-list" ng-style="{'width': tc.scrollbarWidth + 'px'}">
+                                    <div class="timeline-item opened {{item.type}} " ng-repeat="item in tc.timeline" ng-show="item.isOpened">
+                                        <div class="ball big" ng-click="tc.selectTimeline(item)">
+                                            <div class="date">
+                                                <div class="logo-holder" ng-show="item.type == 'news'"><img ng-src="{{item.logo}}" class="img-responsive"></div>
+                                                <div class="text-date" ng-show="item.type == 'software'">Spotted by Bitcoin News Trader</div>
+                                                <div class="text-date" style="padding-top: 10px;" ng-show="item.type == 'chart'">Market Reaction</div>
+                                                {{item.date}}
+                                            </div>
+                                            <div class="line">
+                                                <div class="ball small"></div>
+                                            </div>
+                                        </div>
+                                        <div class="inner-content" ng-class="item.type">
+                                            <div class="info-box" ng-show="item.type == 'news'">
+                                                <div class="logo-holder">
+                                                    <img ng-src="{{item.logo}}" class="img-responsive">
+                                                </div>
+                                                <div class="main-title">
+                                                    {{item.title}}
+                                                </div>
+                                                <div class="text">
+                                                    {{item.text}}
+                                                </div>
+                                            </div>
+                                            <div class="info-box" ng-show="item.type == 'software'">
+                                                <div class="main-title second-title">
+                                                    {{item.title}}
+                                                </div>
+                                                <div class="logo-holder chart-logo">
+                                                    <img ng-src="{{item.image}}" class="img-responsive">
+                                                </div>
+                                                <div class="button-holder">
+                                                    <a data-toggle="tooltip" title="You need membership access to login to Bitcoin News Trader" target="_blank">READ MORE</a>
+                                                </div>
+                                            </div>
+                                            <div class="info-box" ng-show="item.type == 'chart'">
+                                                <div class="logo-holder">
+                                                    <img ng-src="{{item.image}}" class="img-responsive">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-show-more" ng-show="tc.selectedNewsIndex < tc.timeline.length - 1" ng-click="tc.showPrevItem()">SHOW MORE EVENTS</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="how-it-works">
+                <ul class="bitcoin-parallax" id="scene">
+                    <li class="layer layer-1" data-depth="0.1">
+                        <img src="images/bicoin-parallax-sm.png" alt="">
+                    </li>
+                    <li class="layer layer-2" data-depth="0.3">
+                        <img src="images/bicoin-parallax-lg.png" alt="">
+                    </li>
+                </ul>
+                <div class="container">
+                    <h2 class="title">
+                    HOW IT WORKS
+                </h2>
+                    <div class="steps-list row no-gutters">
+                        <div class="steps-list-item col-12 col-xl">
+                            <div class="steps-list-item-wrap">
+                                <span class="icon-pencil"></span>
+                                <h3>Fill Out the <br class="d-none d-xl-block">Registration Form</h3>
+                                <p>
+                                    Once you submit your registration you will be one step closer to becoming a crypto-trading self-made millionaire.
+                                </p>
+                            </div>
+                            <div class="shadow"></div>
+                        </div>
+                        <div class="steps-list-item col-12 col-xl">
+                            <div class="steps-list-item-wrap">
+                                <span class="icon-invest"></span>
+                                <h3>Fund<br class="d-none d-xl-block">Your Account</h3>
+                                <p>
+                                    In order to make money, you need to spend a little; which is why a small investment of around $250 or more is required as starting capital.
+                                </p>
+                            </div>
+                            <div class="shadow"></div>
+                        </div>
+                        <div class="steps-list-item col-12 col-xl">
+                            <div class="steps-list-item-wrap">
+                                <span class="icon-money"></span>
+                                <h3>Build <br class="d-none d-xl-block">Your Success</h3>
+                                <p>
+                                    Now all you need to do is utilize the incredible quality information our tool provides which will help you make investment decisions.
+                                </p>
+                            </div>
+                            <div class="shadow"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="faq">
+                <div class="container">
+                    <h2 class="title">
+                        <span class="icon"></span>
+                        FREQUENTLY ASKED QUESTIONS
+                    </h2>
+                    <div class="faq-list row">
+                        <div class="col-12 col-md-6">
+                            <div class="faq-list-item">
+                                <h3>I'm a beginner in online investing, is this for me?</h3>
+                                <p>
+                                    We carefully developed our tool to be easy to use for beginners and people who aren’t tech-savvy. The tool does all the hard work for you, all you need to do is follow the software’s signals.
+                                </p>
+                            </div>
+                            <div class="faq-list-item">
+                                <h3>How much money could I make?</h3>
+                                <p>
+                                    There is no limit to the amount of money you could make; It really comes down to following the signals and acting fast on what the software predicts.
+                                </p>
+                            </div>
+                            <div class="faq-list-item">
+                                <h3>How much time and effort I would need to invest?</h3>
+                                <p>
+                                    There is no real minimum time requirement; you can log in each day and spend 15 minutes reviewing the signals the software produced, and act upon them if you desire. Using our tool, a 15 minutes review is all you need to make smart investment decisions.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="faq-list-item">
+                                <h3>How much money would I need to invest?</h3>
+                                <p>
+                                    Our software is completely free, and after registration someone will contact you and help guide you through your first investments. All investments are 100% yours, there are no hidden fees.
+                                </p>
+                            </div>
+                            <div class="faq-list-item">
+                                <h3>Is my information safe?</h3>
+                                <p>
+                                    Your information will not be used in any other way than for the purpose of helping you enroll, and take advantage of this game-changing software. We are not in the information-selling business as it is illegal.
+                                </p>
+                            </div>
+                            <div class="faq-list-item">
+                                <h3>Is this a scam?</h3>
+                                <p>
+                                    Our product is a software that is backed up by an dedicated team who are scanning the relevant global news sources 24/7. We strongly believe this game-changing software will revolutionize the industry and therefore giving it for free early on helps us build momentum. Be advised: our software will not stay free forever so you need to act fast...
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="register">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 offset-md-1">
+                            <div class="register-btn-wrap">
+                                <a href="" class="register-btn" style="font-size: 31px;"> Claim Your Free License </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script>
+            $(document).ready(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <footer class="footer">
+            <div class="container">
+                <ul class="footer-menu">
+                    <li>
+                        <a href="terms.html" target="_blank">Terms</a>
+                    </li>
+                    <li>
+                        <a href="disclaimer.html" target="_blank">Disclaimer</a>
+                    </li>
+                    <li>
+                        <a href="privacy.html" target="_blank">Privacy Policy</a>
+                    </li>
+                </ul>
+                <div class="footer-disclaimer">
+                    <div data-intgrtn-agreements="" data-intgrtn-type="4"></div>
+                </div>
+                <div class="footer-copyright">
+                    <img src="fonts/logo-vertical.svg" class="footer-logo" alt="">
+                    <p>
+                        © 2018 BitcoinNewsTrader. All Right Reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+
+            <!-- POPUP -->
+        <div id="finishPopup" style="position: fixed;top: 0;bottom: 0;left: 0;right: 0;z-index: 505;background-color: rgba(0, 0, 0, .8); display: none;">
+            <div class="popup-2" style="display: block; top: 50%; opacity: 1;">
+                <div class="main page-thankyou">
+                    <section class="intro">
+                        <div class="container">
+                            <h1>CONGRATULATIONS!</h1>
+                            <h2 class="title-h2">You are only a few steps away from changing your life and building a new wealthy, independent future.</h2>
+                            <div class="broker-box-holder">
+                                <div class="broker-box">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-11">
+                                            <div class="">
+                                                <p class="margin-left-30">
+                                                    <strong>Bitcoin News Trader</strong> join hands with a <strong>leading market broker</strong> to complement your trading best. With us you get a complete service package of priceless financial expertise & advanced trading software.
+                                                </p>
+                                                <p class="margin-left-30">
+                                                    Don't miss this golden opportunity to learn how to trade like a pro and turn your trading skills into downright profit. <strong>How?</strong> By getting a tailor-made guidance suited perfectly for your own needs, taking you by the hand to line-up with market whalers.
+                                                </p>
+                                                <p class="margin-left-30">
+                                                    <strong>1,2,3 and you're good to go:</strong>
+                                                </p>
+                                                <ol>
+                                                    <li>
+                                                        Fund your account with by depositing a minimum of $250
+                                                    </li>
+                                                    <li>
+                                                        Receive an email with a link to access Bitcoin News Trader software
+                                                    </li>
+                                                    <li>
+                                                        Expect a call from a trading expert to take you through the ropes to the trading level you wish to soar. (Receive a call within the next 24hr)
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-4">
+                                                    <div class="broker-logo">
+                                                        <img class="img-fluid broker_image" alt="" src="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-7 step-holder clearfix">
+                                                    <div class="icon-holder">
+                                                        <img class="img-fluid" src="images/icon-laptop.png" alt="">
+                                                    </div>
+                                                    <div class="title">Your Safety is Our Priority</div>
+                                                </div>
+                                                <div class="col-md-5 step-holder clearfix">
+                                                    <div class="icon-holder">
+                                                        <img class="img-fluid" src="images/icon-dolars.png" alt="">
+                                                    </div>
+                                                    <div class="title">High Payout Options</div>
+                                                </div>
+                                            </div>
+                                            <a class="btn_redir">
+                                                <button class="btn btn-block btn-start-trading">TRADE YOUR WAY UP</button>
+                                            </a>
+                                        </div>
+                                        <div class="clearfix help-section">
+                                            <p class="">
+                                                After you click the <strong>TRADE YOUR WAY UP!</strong> button, we will have an expert call you (free of charge) as soon as possible to help guide you through the process. You can expect our representative to call within 24 hours. Don’t be spooked when seeing a long or strange number, that’s our representative.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-basement">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <ul class="intro-basement-badges list-inline">
+                                        <li class="list-inline-item">
+                                            <img src="images/logos/virus-free.png" class="img-responsive">
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <img src="images/logos/best-seller.png" class="img-responsive">
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <img src="images/logos/ssl.png" class="img-responsive">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/multistep-form.js"></script>
+    <script src="js/getdetector.js"></script>
+    <script src="js/intlTelInput.js"></script>
+    <script src="js/countries.js"></script>
+    
+    <script src="https://widgets.investmen.pw/js/show.js"></script>
+    <script src=" js/youtubeUP.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script type="text/javascript">
+        $(".register-btn").click(function() {
+            $('html, body').animate({
+                scrollTop: $('header').offset().top
+            }, 1000);
+        })
+    </script>
+    <script type="text/javascript">
+        $("#phone123, #phone124, #phone125").intlTelInput({
+            initialCountry: "auto",
+            geoIpLookup: function(callback) {
+                $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+                    var countryCode = (resp && resp.country) ? resp.country : "";
+                    callback(countryCode);
+                }).done(function() {
+                    // makeCode();
+                });
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var session = $.urlParam('session');
+            var email = $.urlParam('email');
+            var first_name = $.urlParam('first_name');
+            var affiliate_id = $.urlParam('aff_id');
+
+            if(affiliate_id) {
+                $(".affiliate_id").val(affiliate_id);
+            }
+            if(email) {
+                $(".emailInclude").val(decodeURIComponent(email));
+            }
+            if(first_name) { 
+                first_name=first_name.replace('+', ' ');
+                $(".first_nameInclude").val(decodeURIComponent(first_name));
+            }
+            if(session) {
+                $(".session_id").val(session);
+            }
+
+        });
+    </script>
+</body>
+</html>
